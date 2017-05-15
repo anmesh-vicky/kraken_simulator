@@ -1,0 +1,11 @@
+<launch>
+<arg name="model" />
+	<arg name="gui" default="False" />
+<param name="use_gui" value="$(arg gui)"/>
+<param name="robot_description" textfile="$(find MY_ROBO)/urdf/kraken2.urdf"/>
+ <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        
+</node>
+  <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
+</node>
+</launch>

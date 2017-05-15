@@ -1,0 +1,11 @@
+<launch>
+
+  <param name="robot_description" command="$(find MY_ROBO)/urdf/kraken.urdf" />
+
+  
+  <param name="use_gui" value="true"/>
+
+  
+  <node name="rviz" pkg="rviz" type="rviz" />
+
+</launch>

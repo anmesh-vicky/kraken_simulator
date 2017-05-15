@@ -1,0 +1,38 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"camera_bottom" [label="camera_bottom"];
+"camera_bottom_optical" [label="camera_bottom_optical"];
+"camera_front" [label="camera_front"];
+"camera_front_optical" [label="camera_front_optical"];
+"depth_sensor" [label="depth_sensor"];
+"dvl_link" [label="dvl_link"];
+"imu_link" [label="imu_link"];
+"left_heave_thruster" [label="left_heave_thruster"];
+"left_surge_thruster" [label="left_surge_thruster"];
+"right_heave_thruster" [label="right_heave_thruster"];
+"right_surge_thruster" [label="right_surge_thruster"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "camera_bottom_to_base_link" [label="xyz: 0.05 -0 0.03 \nrpy: 3.14159 0.00159265 3.14159"]
+"camera_bottom_to_base_link" -> "camera_bottom"
+"camera_bottom" -> "camera_bottom_optical_to_base_link" [label="xyz: 0 0 0 \nrpy: 0 0 -1.57"]
+"camera_bottom_optical_to_base_link" -> "camera_bottom_optical"
+"base_link" -> "camera_front_to_base_link" [label="xyz: 0.358 -0 -0.13 \nrpy: 0 -1.57 0"]
+"camera_front_to_base_link" -> "camera_front"
+"camera_front" -> "camera_front_optical_to_base_link" [label="xyz: 0 0 0 \nrpy: 0 0 -1.57"]
+"camera_front_optical_to_base_link" -> "camera_front_optical"
+"base_link" -> "depth_sensor_to_base_link" [label="xyz: -0.302 0 -0.03 \nrpy: 0 -0 0"]
+"depth_sensor_to_base_link" -> "depth_sensor"
+"base_link" -> "dvl_to_base_link" [label="xyz: -0.602 0 -0.3 \nrpy: 0 -0 0"]
+"dvl_to_base_link" -> "dvl_link"
+"base_link" -> "imu_to_base_link" [label="xyz: -0.602 0 -0.03 \nrpy: 0 -0 0"]
+"imu_to_base_link" -> "imu_link"
+"base_link" -> "left_heave_thruster_to_base_link" [label="xyz: -0 0.17 -0.06 \nrpy: 0 -0 0"]
+"left_heave_thruster_to_base_link" -> "left_heave_thruster"
+"base_link" -> "left_surge_thruster_to_base_link" [label="xyz: -0.452 0.17 -0.01 \nrpy: 0 -0 0"]
+"left_surge_thruster_to_base_link" -> "left_surge_thruster"
+"base_link" -> "right_heave_thruster_to_base_link" [label="xyz: -0 -0.17 -0.06 \nrpy: 0 -0 0"]
+"right_heave_thruster_to_base_link" -> "right_heave_thruster"
+"base_link" -> "right_surge_thruster_to_base_link" [label="xyz: -0.452 -0.17 -0.01 \nrpy: 0 -0 0"]
+"right_surge_thruster_to_base_link" -> "right_surge_thruster"
+}
